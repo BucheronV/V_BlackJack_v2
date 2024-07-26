@@ -1,0 +1,170 @@
+:root{
+    --color-dark: #232323;
+    --color-white: #ffffff;
+    --color-dark-orange: #df6019;
+    --color-light-orange:#e9a42e;
+    --color-light-blue: #dffffd;
+    ---color-light-grey: #f0f0f0fa;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(---color-light-grey);
+}
+
+/*element*/
+h3{
+    color: var(--color-white);
+}
+
+/*header*/
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    height: 20vh;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+}
+
+#logo{
+    height: 20vh;
+    aspect-ratio: 1;
+    background: url('../assets/logo/L5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 0% 5% 5% 0%;
+}
+
+#title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    height: 20vh;
+    width: 55vw;
+}
+
+#music{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-dark);
+    height: 20vh;
+    aspect-ratio: 1;
+    border-radius: 5% 0% 0% 5%;
+}
+
+/*main*/
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/*Left Side*/
+
+#sideL{
+    background-color: var(--color-dark);
+    width: 15vw;
+    height: 90vh;
+    border-radius: 0% 5% 5% 0%;
+}
+
+#sideL:hover{
+    background-color: var(--color-dark-orange);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
+
+#menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    aspect-ratio: 1;
+    background: url('../assets/jetons/bJetons.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: var(--color-white);
+    width: 10vw;
+    height: 20vh;
+    margin: 5vh 2.5vw;
+    border-radius: 50%;
+    transition : width 500ms;
+}
+
+#play{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    aspect-ratio: 1;
+    background: url('../assets/jetons/bJetons.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: var(--color-white);
+    width: 10vw;
+    height: 20vh;
+    margin: 5vh 2.5vw;
+    border-radius: 50%;
+    transition : width 500ms;
+}
+
+#history{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    aspect-ratio: 1;
+    background: url('../assets/jetons/bJetons.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: var(--color-white);
+    width: 10vw;
+    height: 20vh;
+    margin: 5vh 2.5vw;
+    border-radius: 50%;
+    transition : width 500ms;
+}
+
+/*Center*/
+
+#center{
+    background: url('../assets/background/5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 60vw;
+    height: 100vh;
+}
+
+
+/*Rigth Side*/
+
+#sideR{
+    background: url('../assets/background/jackDaniels.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 15vw;
+    height: 90vh;
+    border-radius: 5% 0% 0% 5%;
+}
+
+/*footer*/
