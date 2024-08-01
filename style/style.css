@@ -13,7 +13,10 @@
 }
 
 body{
-    background: var(---color-light-grey);
+    background-image: url('../assets/table/blackjack.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /*element*/
@@ -34,7 +37,7 @@ header{
 }
 
 #logo{
-    height: 20vh;
+    height: 15vh;
     aspect-ratio: 1;
     background: url('../assets/logo/L5.jpg');
     background-size: cover;
@@ -49,6 +52,15 @@ header{
     font-size: 5rem;
     height: 20vh;
     width: 55vw;
+    color: var(--color-dark);
+    text-shadow: 2px 2px 0px var(---color-light-grey), 
+                2px -2px 0px var(---color-light-grey), 
+			    -2px 2px 0px var(---color-light-grey), 
+			    -2px -2px 0px var(---color-light-grey), 
+			    2px 0px 0px var(---color-light-grey), 
+			    0px 2px 0px var(---color-light-grey), 
+			    -2px 0px 0px var(---color-light-grey), 
+			    0px -2px 0px var(---color-light-grey);
 }
 
 #music{
@@ -56,8 +68,8 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-dark);
-    height: 20vh;
+    background-color: transparent;
+    height: 15vh;
     aspect-ratio: 1;
     border-radius: 5% 0% 0% 5%;
 }
@@ -65,6 +77,7 @@ header{
 /*main*/
 
 main{
+    margin-top: 2%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -74,23 +87,12 @@ main{
 
 #sideL{
     background-color: var(--color-dark);
-    width: 15vw;
-    height: 90vh;
+    width: 10vw;
+    height: 70vh;
     border-radius: 0% 5% 5% 0%;
 }
 
-#sideL:hover{
-    background-color: var(--color-dark-orange);
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-}
-
-nav{
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-}
-
-#menu{
+#new-card{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -101,14 +103,12 @@ nav{
     background-repeat: no-repeat;
     background-position: center;
     color: var(--color-white);
-    width: 10vw;
-    height: 20vh;
-    margin: 5vh 2.5vw;
+    width: 8vw;
+    margin: 5vh 1vw;
     border-radius: 50%;
-    transition : width 500ms;
 }
 
-#play{
+#show{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -119,14 +119,12 @@ nav{
     background-repeat: no-repeat;
     background-position: center;
     color: var(--color-white);
-    width: 10vw;
-    height: 20vh;
-    margin: 5vh 2.5vw;
+    width: 8vw;
+    margin: 5vh 1vw;
     border-radius: 50%;
-    transition : width 500ms;
 }
 
-#history{
+#sleep{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -137,34 +135,26 @@ nav{
     background-repeat: no-repeat;
     background-position: center;
     color: var(--color-white);
-    width: 10vw;
-    height: 20vh;
-    margin: 5vh 2.5vw;
+    width: 8vw;
+    margin: 5vh 1vw;
     border-radius: 50%;
-    transition : width 500ms;
 }
 
 /*Center*/
 
 #center{
-    background: url('../assets/background/5.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    border: solid var(--color-dark-orange) 5px;
+    box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 5%;
     width: 60vw;
     height: 100vh;
 }
 
-
-/*Rigth Side*/
-
-#sideR{
-    background: url('../assets/background/jackDaniels.webp');
+#bank{
+    background: url('../assets/background/5.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-    width: 15vw;
-    height: 90vh;
-    border-radius: 5% 0% 0% 5%;
+    height: 30vh;
+    aspect-ratio: 1;
+    border-radius: 5%;
 }
-
-/*footer*/

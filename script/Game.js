@@ -1,26 +1,44 @@
 import { Card } from "./Card.js";
 import { drawACard } from "./DrawACard.js";
 
-export function blackJack () {
-    let deck = Card
-    let handBank =[]
-    let handPlayer = []
-    let playerScore = 0
-    let bankScore = 0
 
-    //debut de partie avec la banque et le joueur qui ont leur 2ème cartes 
-    //main du joueur
-    handPlayer.push(drawACard(deck))
-    handPlayer.push(drawACard(deck))
-    handPlayer.forEach((drawCard)=>{playerScore+=drawCard.value})
-    console.log(handPlayer, playerScore)
-    //main de la banque
-    handBank.push(drawACard(deck))
-    handBank.push(drawACard(deck))
-    handBank.forEach((drawCard)=>{bankScore+=drawCard.value})
-    console.log(handBank, bankScore)
+
+export class blackJack  {
+    deck;
+    handBank;
+    handPlayer;
+    playerScore;
+    bankScore;
+
+   //variables des bouttons d'actions
+    sleep;
+    show;
+    cardPlus;
+
+    constructor(){
+        this.deck = Card
+        this.handBank =[]
+        this.handPlayer = []
+        this.playerScore = 0
+        this.bankScore = 0
     
-    console.log(deck)
+        //variables des bouttons d'actions
+        this.sleep = document.querySelector('#sleep')
+        this.show = document.querySelector('#show')
+        this.cardPlus = document.querySelector('#new-card')
+    
+    
+    this.handPlayer.push(drawACard(this.deck))
+    this.handPlayer.push(drawACard(this.deck))
+    this.handPlayer.forEach((drawCard)=>{this.playerScore+=drawCard.value})
+    console.log(this.handPlayer, this.playerScore)
+    //main de la banque
+    this.handBank.push(drawACard(this.deck))
+    this.handBank.push(drawACard(this.deck))
+    this.handBank.forEach((drawCard)=>{this.bankScore+=drawCard.value})
+    console.log(this.handBank, this.bankScore)
+    
+    console.log(this.deck)
 
     /*
         PENSE BÊTE ^_^ ET PRÉPARATION DU CODE 
@@ -37,18 +55,57 @@ export function blackJack () {
         comparatif entre la main du joueur et de la banque
         si et seulement ci le joueur appui sur le boutton "show" sinon on fait les boucles vu au dessus
         -> voir si le joueur est au dessus de 21
-        -->if(joueur>21){
-            afficher victoire de la banque
-        }else{
-            if(joueur=<21, banque>21){
-                afficher la victoire du joueur
+
+
+        this.show.addEvenListener('click', ()=>{
+            while(true){
+                if()
+            }
+        })
+
+    */
+
+
+    this.sleep.addEventListener('click', ()=>{
+        console.log('perdu')
+    })
+
+    this.cardPlus.addEventListener('click', ()=>{
+        this.handPlayer.push(drawACard(this.deck))
+        this.playerScore = 0;
+        this.handPlayer.forEach((drawCard)=>{this.playerScore+=drawCard.value})
+        console.log(this.handPlayer, this.playerScore)
+        console.log(this.deck)
+        if(this.playerScore>21){
+            console.log("Bank Win")
+            this.cardPlus.setAttribute('disabled', true)
+            this.show.setAttribute('disabled', true)
+            this.sleep.setAttribute('disabled', true)
+        }
+    })
+
+    //boucle du jeu (bank vs joueur)
+    this.show.addEventListener('click',()=>{
+        while(true){
+            console.log(this.handBank, this.bankScore)
+            if(this.bankScore>21){
+                console.log('Player Win')
+                break;
+            }else if(this.bankScore>=this.playerScore){
+                console.log('Bank Win')
+                break;
             }else{
-                if(joueur=<21, banque=<21, joueur>banque){
-                    joueur gagne
-                }else{
-                    banque gagne
-                }
+                this.bankScore = 0
+                this.handBank.push(drawACard(this.deck))
+                this.handBank.forEach((drawCard)=>{this.bankScore+=drawCard.value})
             }
         }
-    */
+    })
+    //fin constructeur
+    }
+
+    //debut de partie avec la banque et le joueur qui ont leur 2ème cartes 
+    //main du joueur
+    
+
 }
